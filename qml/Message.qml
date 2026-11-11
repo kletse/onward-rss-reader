@@ -1,4 +1,4 @@
-// "Loading…", "All caught up": centred across, a fifth of the way down (Reader.qml centres the end of the list).
+// "Loading…", "All caught up": centred across; Reader.qml centres them down the window too.
 import QtQuick
 
 Column {
@@ -9,7 +9,6 @@ Column {
     property string text: ""
     property bool logo: false
 
-    topPadding: ui.height * 0.2
     spacing: 16
 
     Logo {
