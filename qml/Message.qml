@@ -1,4 +1,4 @@
-// "Loading…", "All caught up": centred, a fifth of the way down.
+// "Loading…", "All caught up": centred across, a fifth of the way down (Reader.qml centres the end of the list).
 import QtQuick
 
 Column {

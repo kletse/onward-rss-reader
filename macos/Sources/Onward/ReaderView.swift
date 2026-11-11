@@ -12,8 +12,9 @@ struct ReaderView: View {
     var body: some View {
         GeometryReader { outer in
             let top: CGFloat = outer.size.width < 560 ? 24 : 40
-            // An article that fits is centred, with nothing to scroll.
-            let centred = model.state?.screen == "article" && contentHeight + 2 * top <= outer.size.height
+            // An article that fits is centred, with nothing to scroll, and so is the end of the list.
+            let screen = model.state?.screen
+            let centred = (screen == "article" || screen == "end") && contentHeight + 2 * top <= outer.size.height
             ScrollView {
                 content
                     .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { contentHeight = $0 }
@@ -56,7 +57,6 @@ struct ReaderView: View {
             } description: {
                 Text(model.state?.endHint ?? "")
             }
-            .padding(.top, 80)
         default:
             EmptyView()
         }

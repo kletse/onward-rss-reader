@@ -13,8 +13,8 @@ Flickable {
     readonly property bool atTop: contentY <= 4
     readonly property real gutter: width < 560 ? 16 : 24
     readonly property real topMargin: width < 560 ? 24 : 40
-    /// An article that fits is centred, with nothing to scroll.
-    readonly property bool centred: model.screen === "article" && content.height + 2 * topMargin <= height
+    /// An article that fits is centred, with nothing to scroll, and so is the end of the list.
+    readonly property bool centred: (model.screen === "article" || model.screen === "end") && content.height + 2 * topMargin <= height
 
     contentWidth: width
     contentHeight: page.height
@@ -223,6 +223,7 @@ Flickable {
         Message {
             ui: reader.ui
             logo: true
+            topPadding: 0
             title: reader.model.endTitle
             text: reader.model.endHint
         }
