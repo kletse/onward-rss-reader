@@ -2,7 +2,7 @@
   <img src="packaging/onward.svg" width="96" alt="Onward icon">
 </p>
 
-<h1 align="center">Onward</h1>
+<h1 align="center">Onward RSS Reader</h1>
 
 <p align="center">
   <b>One unread article at a time. Oldest first. Keyboard all the way.</b><br>
